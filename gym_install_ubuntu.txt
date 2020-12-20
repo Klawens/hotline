@@ -1,0 +1,36 @@
+# step1:
+sudo apt-get install golang python3-dev python-dev libcupti-dev libjpeg-turbo8-dev make tmux htop chromium-browser git cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
+
+# step2:
+conda create -n gymlab python=3.8 -y
+
+# step3:
+conda install pip six libgcc swig
+
+# step4:
+conda install -c menpo opencv
+
+# step5:
+git clone https://github.com/openai/gym.git
+git clone https://github.com/openai/universe.git
+
+# step6:
+cd gym
+vi setup.py
+# 'box2d-py', 'mujoco', 'atari', 'robotics'
+pip install -e '.[all]'
+sudo apt-get install build-essential python-dev swig python-pygame git
+git clone https://github.com/pybox2d/pybox2d
+cd pybox2d
+python setup.py build
+pip install box2d-py
+un# 'mujoco'
+pip install -e '.[mujoco]'
+
+# step7:
+cd universe
+sudo apt-get install golang libjpeg-turbo8-dev make
+pip install -e .
+
+
+# Done!
