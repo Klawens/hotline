@@ -1,7 +1,7 @@
 # train
 
 # 1 GPU
-python tools/train.py {CONFIG} (opt: {--no-validate})
+CUDA_VISIBLE_DEVICES=0 python tools/train.py {CONFIG} (opt: {--no-validate})
 # multiple GPUs
 ./tools/dist_train.sh {CONFIG} {GPU_NUM} (opt: {--no-validate})
 
@@ -9,6 +9,6 @@ python tools/train.py {CONFIG} (opt: {--no-validate})
 # inference
 
 # 1 GPU
-python tools/test.py {CONFIG} {CHECKPOINT} --format-only --options "jsonfile_prefix=./xxx"
+CUDA_VISIBLE_DEVICES=0 python tools/test.py {CONFIG} {CHECKPOINT} --format-only --options "jsonfile_prefix=./xxx"
 # multiple GPUs
 ./tools/dist_test.sh {CONFIG} {CHECKPOINT} {GPU_NUM} --format-only --options "jsonfile_prefix=./xxx"
