@@ -17,4 +17,4 @@ setInterval(ClickConnect,60000)
 function ClickConnect(){
 console.log("Working"); 
 document.querySelector("colab-toolbar-button").click() 
-}setInterval(ClickConnect,60000)
+}setInterval(ClickConnect,1200000)
