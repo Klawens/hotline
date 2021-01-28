@@ -12,3 +12,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/train.py {CONFIG} (opt: {--no-validate})
 CUDA_VISIBLE_DEVICES=0 python tools/test.py {CONFIG} {CHECKPOINT} --format-only --options "jsonfile_prefix=./xxx"
 # multiple GPUs
 ./tools/dist_test.sh {CONFIG} {CHECKPOINT} {GPU_NUM} --format-only --options "jsonfile_prefix=./xxx"
+
+
+# log analyze
+python tools/analyze_logs.py plot_curve log.json --keys loss s2.loss_bbox --out losses.pdf
